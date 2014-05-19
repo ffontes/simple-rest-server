@@ -1,8 +1,6 @@
-var config = require('./config'),
-    logger = require('./logger'),
-    _s = require('underscore.string');
+var config = require('./config');
 
-function buildResponse(guid, fileInfo){
+function buildResponse(sessionLogger, fileInfo){
     var responseInfo ={
             code: null, 
             content: '', //default
@@ -19,7 +17,7 @@ function buildResponse(guid, fileInfo){
         responseInfo.message= fileInfo.exists? 'Oooops!':'Not Found';
     }
 
-    logger.trace( _s.sprintf( '%s Response is : %s', guid, responseInfo.code ));
+    sessionLogger.trace( 'Response is : %s'.build( responseInfo.code ));
     return responseInfo;
 }
 

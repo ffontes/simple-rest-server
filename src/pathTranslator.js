@@ -1,14 +1,12 @@
-var config = require('./config'),
-    logger = require('./logger'),
-    _s = require('underscore.string');
+var config = require('./config');
 var rootPath = './services';
 
 
-function getFileSystemPath(guid, url, method){
-    logger.trace('%s %s request at: %s', guid, method, url);
+function getFileSystemPath(sessionLogger, url, method){
+    sessionLogger.trace('%s request at: %s'.build(method, url) ) ;
     
     var filePath = rootPath + url + "/" + method + config.fileSystem.extension;
-    logger.debug('%s File Path is: %s ', guid, filePath);
+    sessionLogger.debug('File Path is: %s '.build( filePath ) ) ;
     
     return filePath;
 }

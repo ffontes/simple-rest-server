@@ -1,34 +1,32 @@
 var q = require('q'),
-    fs = require('fs'),
-    logger = require('./logger'),
-    _s = require('underscore.string');
+    fs = require('fs');
 
-function getFileInfo(guid, path){
+function getFileInfo(sessionLogger, path){
     var deferred= q.defer();
         fileInfo= {};
 
-    logger.trace( _s.sprintf( '%s Checking for %s existence', guid, path ));
+    sessionLogger.trace( 'Checking for %s existence'.build( path ) );
     fs.exists(path, function(fileExistence) {
 
         fileInfo.existence = fileExistence;
         if(fileExistence){
-            logger.info( _s.sprintf( '%s %s exists!', guid, path));
+            sessionLogger.info( '%s exists!'.build(path) );
 
             fs.readFile(fileSystemPath, function(error, content) {
                 fileInfo.error= error;
 
                 if (!error){
-                    logger.trace( _s.sprintf( '%s Content: %s', guid, content));
+                    sessionLogger.trace( 'Content: %s'.build(content) );
                     fileInfo.content = content;
                 }else{
-                    logger.error( _s.sprintf( '%s error loading file', guid));
+                    sessionLogger.error( 'Error loading file');
                 }
 
                 deferred.resolve(fileInfo);
             })
 
         }else{
-            logger.warn( _s.sprintf( '%s file not found', guid));
+            sessionLogger.warn('file not found');
             deferred.resolve(fileInfo);
         }
     });

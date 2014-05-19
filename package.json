@@ -1,13 +1,15 @@
 {
   "name": "simple-rest-server",
-  "version": "0.0.1-B2",
+  "version": "0.0.1-B3",
   "dependencies": {
     "express": "2.x.x",
     "mime": "~1.2.9",
     "q": "~1.0.1",
     "log4js": "~0.6.14",
     "guid": "0.0.12",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.3.3",
+    "underscore": "~1.6.0",
+    "JSON": "~1.0.0"
   },
   "engines": {
     "node": "0.10.x",
