@@ -32,8 +32,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 * 0.0.1 Initial release
 
-- Separated concerns
-- Logging support
+	- Separated concerns
+	- Logging support
 
 
 
