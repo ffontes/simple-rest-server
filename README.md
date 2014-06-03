@@ -17,7 +17,7 @@ By default the server runs at port 5000, and the directory structure must be loc
 mkdir services
 mkdir services/test
 echo "{ 'greeting': 'Hello World' }" > services/test/GET.json
-npm install
+
 node
 > var server = require('simple-rest-server');
 > server.init(); // start a server at 127.0.0.1:5000
