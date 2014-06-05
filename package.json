@@ -17,7 +17,10 @@
   },
   "description": "Simple rest server, based on a directory structure",
   "main": "src/simpleRestServer.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "1.20.1",
+    "chai": "1.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
