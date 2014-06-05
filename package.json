@@ -1,6 +1,6 @@
 {
   "name": "simple-rest-server",
-  "version": "0.0.1-B3",
+  "version": "0.0.1",
   "dependencies": {
     "express": "2.x.x",
     "mime": "~1.2.9",
@@ -14,5 +14,21 @@
   "engines": {
     "node": "0.10.x",
     "npm": "1.2.x"
-  }
+  },
+  "description": "Simple rest server, based on a directory structure",
+  "main": "src/simpleRestServer.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GlobantMobileStudio/simple-rest-server.git"
+  },
+  "author": "Nicolas Avila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GlobantMobileStudio/simple-rest-server/issues"
+  },
+  "homepage": "https://github.com/GlobantMobileStudio/simple-rest-server"
 }

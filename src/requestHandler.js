@@ -22,7 +22,7 @@ function onRequest(request, response){
     
         //and finally... we respond the client
         response.writeHead(responseInfo.code, { 'Content-Type': responseInfo.type });
-        response.end(responseInfo.content, 'utf-8');
+        response.end(responseInfo.message, 'utf-8');
     });
 
 };

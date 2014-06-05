@@ -8,12 +8,12 @@ function getFileInfo(sessionLogger, path){
     sessionLogger.trace( 'Checking for %s existence'.build( path ) );
     fs.exists(path, function(fileExistence) {
 
-        fileInfo.existence = fileExistence;
+        fileInfo.exists = fileExistence;
         if(fileExistence){
             sessionLogger.info( '%s exists!'.build(path) );
 
-            fs.readFile(fileSystemPath, function(error, content) {
-                fileInfo.error= error;
+            fs.readFile(path, function(error, content) {
+                fileInfo.error = error || false;
 
                 if (!error){
                     sessionLogger.trace( 'Content: %s'.build(content) );
