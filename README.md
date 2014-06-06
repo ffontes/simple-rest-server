@@ -35,5 +35,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 	- Separated concerns
 	- Logging support
 
+* 0.0.1a Cross Domain
+
+	- Cross-domian support added
 
 
