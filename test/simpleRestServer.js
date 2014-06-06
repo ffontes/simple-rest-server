@@ -15,6 +15,7 @@ describe('#simpleRestServer', function() {
 		});
   	});
 
+  	
   	it('GET invalid url', function(done) {
 		client.get("http://127.0.0.1:5000/invalid", function(data, response){
 			response.statusCode.should.equal(404);
@@ -56,5 +57,11 @@ describe('#simpleRestServer', function() {
 		});
   	});    		
 	
-
+	it('Cross Domain', function(done) {
+		client.get("http://127.0.0.1:5000/projects", function(data, response){
+			response.headers['access-control-allow-origin'].should.equal('*');
+			response.headers['access-control-allow-headers'].should.equal('X-Requested-With');
+			done();
+		});
+  	});
 });
