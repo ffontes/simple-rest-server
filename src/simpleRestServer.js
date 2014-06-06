@@ -7,6 +7,8 @@ var port = process.env.PORT || 5000;
 
 function init(){
     express.createServer(function (request, response) {
+    	response.header("Access-Control-Allow-Origin", "*");
+  		response.header("Access-Control-Allow-Headers", "X-Requested-With");
         handler.onRequest(request, response);
     }).listen(port);
 
