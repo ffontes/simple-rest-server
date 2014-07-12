@@ -1,0 +1,5 @@
+{
+    "/addToCart": "./services/addToCart/addToCartDynamic.js",
+    "/getUser": ".././services/getUser/getUserDynamic.js",
+    "/getCart": "./services/getCart/getCartDynamic.js"
+}

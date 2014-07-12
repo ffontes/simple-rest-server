@@ -21,7 +21,23 @@ function buildResponse(sessionLogger, fileInfo){
     return responseInfo;
 }
 
+function buildCreateResponse(sessionLogger){
+    var responseInfo ={
+        code: null,
+        content: '', //default
+        type:'text/html' //default
+    };
+
+    responseInfo.code = 200;
+    responseInfo.message = '{"result":"Service successfully created"}';
+    //no need to evaluate mime type
+    responseInfo.type = config.response.defaultContentType; //trutty
+    sessionLogger.trace( 'Response is : %s'.build( responseInfo.code ));
+    return responseInfo;
+}
+
 
 module.exports = {
-    buildResponse: buildResponse
+    buildResponse: buildResponse,
+    buildCreateResponse: buildCreateResponse
 };

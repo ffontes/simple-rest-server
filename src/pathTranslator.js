@@ -11,6 +11,16 @@ function getFileSystemPath(sessionLogger, url, method){
     return filePath;
 }
 
+function isSetPath(sessionLogger, url){
+    var urlPaths = url.split("/");
+    if(urlPaths[urlPaths.length-1].indexOf('set_') === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 module.exports ={
-    getFileSystemPath: getFileSystemPath
+    getFileSystemPath: getFileSystemPath,
+    isSetPath: isSetPath
 };
